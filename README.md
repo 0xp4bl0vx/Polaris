@@ -5,7 +5,7 @@ is provided for management of multiple devices and data analisys.
 
 # Development
 This is a work in progress, the wemos code is under development following this circuit:
-![[circuit.png]]
+![Circuit](circuit.png)
 
 A ToDo task can be found in wemos_code directory.
 
