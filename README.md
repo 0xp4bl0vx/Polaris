@@ -1,14 +1,17 @@
 # Polaris
 
-Polaris is an IoT device powered by an ESP8266 that monitors temperature. A web application
-is provided for management of multiple devices and data analisys.
+Polaris es un dispositivo IoT formado por un ESP8266 que monitoriza temperaturas. Cuenta con
+una aplicacion web que sirve para la administraciñon de multiples dispositivos y la visualización
+de las mediciones
 
-# Development
-This is a work in progress, the wemos code is under development following this circuit:
+# Desarrollo
+El proyecto aun esta en desarrollo. Este es el esquema actual del dispositivo:
+
 ![Circuit](circuit.png)
 
-A ToDo task can be found in wemos_code directory.
+El formulario de configuracion y el código actual del arduino ya estan disponibles.
+Conforme el proyecto avance actualizare el esquema y este README.md
 
-# License
-This project is under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
-More info here: https://creativecommons.org/licenses/by-nc-sa/4.0/
+# Licencia
+Este proyecto esta bajo la licencia de Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.
+Más info aqui: https://creativecommons.org/licenses/by-nc-sa/4.0/
