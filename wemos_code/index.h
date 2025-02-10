@@ -1,4 +1,4 @@
-const char* index_page = R"=====(<!DOCTYPE html>
+const char* indexPage = R"=====(<!DOCTYPE html>
 <html>
     <body>
         <title>Configuración de Polaris</title>
@@ -93,6 +93,11 @@ const char* index_page = R"=====(<!DOCTYPE html>
                 }
 
                 if (!checkApiKey()) {
+                    errors = true;
+                }
+
+                if (parseFloat(maxTemp.value) <= parseFloat(minTemp.value)) {
+                    errorMaxTemp.textContent = "La temperatura máxima debe ser mayor que la mínima";
                     errors = true;
                 }
 

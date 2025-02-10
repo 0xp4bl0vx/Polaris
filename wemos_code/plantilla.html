@@ -1,28 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <body>
+    <head>
         <title>Configuración de Polaris</title>
-        <h1> Página de configuración de Polaris</h1>
-        <form method="post" enctype="application/x-www-form-urlencoded" action="/postconfig/" id="config_form">
-            <h2>Configuración del dispositivo</h2>
-            <label>Temperatura máxima: </label>
-            <input type="text" name="max_temp" id="max_temp" required><span class="error" id="error_max_temp"></span><br><br>
-            <label>Temperatura mínima: </label>
-            <input type="text" name="min_temp" id="min_temp" required><span class="error" id="error_min_temp"></span><br><br>
-            <label>Frequencia de las medidas: </label>
-            <input type="number" name="measures_freq" id="measures_freq" required><span class="error" id="error_measures_freq"></span><br><br>
-            <h2>Configuracion de la red WIFI</h2>
-            <label>SSID: </label>
-            <input type="text" name="ssid" id="ssid" required><span class="error" id="error_ssid"></span><br><br>
-            <label>Contraseña: </label>
-            <input type="password" name="pass" id="pass" required><span class="error" id="error_pass"></span><br><br>
-            <h2>Configuración del servidor</h2>
-            <label>URL: </label>
-            <input type="url" name="post_server" id="post_server" required><span class="error" id="error_post_server"></span><br><br>
-            <label>API key: </label>
-            <input type="text" name="api_key" id="api_key" required><span class="error" id="error_api_key"></span><br><br>
-            <input type="submit" value="Save">
-        </form>
+        <style>
+            * {
+	            margin: 0;
+	            padding: 0;
+                box-sizing: border-box;
+	            background: #46507E;
+                font-family: Helvetica;
+                color: #FBFBFB;
+            }
+
+            h1 {
+                color: #B7EABB;
+                font-size: 3em;
+                text-align: center;
+                margin-top: 3%;
+            }
+            
+            .form {
+                font-size: 1.5em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 6vh;
+            }
+
+            .form form {
+                width: 50vw;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .form form h2 {
+                color: #EFD5F4;
+                font-size: 1.75em;
+                width: 100%;
+            }
+
+            input {
+                background-color: #7281c9;
+                border-radius: 6px;
+                border: none;
+                outline: none;
+                color: #FBFBFB;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Configuración de Polaris</h1>
+        <div class="form">
+            <form method="post" enctype="application/x-www-form-urlencoded" action="/postconfig/" id="config_form">
+                <h2>Dispositivo</h2>
+                <label>Temperatura máxima</label>
+                <label>Temperatura mínima</label>
+                <label>Intervalo mediciones</label>
+                <input type="text" name="max_temp" id="max_temp" required><span class="error" id="error_max_temp"></span>
+                <input type="text" name="min_temp" id="min_temp" required><span class="error" id="error_min_temp"></span>
+                <input type="number" name="measures_freq" id="measures_freq" required><span class="error" id="error_measures_freq"></span>
+                <h2>WIFI</h2>
+                <label>SSID</label>
+                <input type="text" name="ssid" id="ssid" required><span class="error" id="error_ssid"></span><br><br>
+                <label>Contraseña</label>
+                <input type="password" name="pass" id="pass" required><span class="error" id="error_pass"></span><br><br>
+                <h2>Servidor</h2>
+                <label>URL</label>
+                <input type="url" name="post_server" id="post_server" required><span class="error" id="error_post_server"></span><br><br>
+                <label>API Key</label>
+                <input type="text" name="api_key" id="api_key" required><span class="error" id="error_api_key"></span><br><br>
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
         <script>
             const configForm = document.getElementById("config_form");
             const maxTemp = document.getElementById("max_temp");
@@ -93,6 +144,11 @@
                 }
 
                 if (!checkApiKey()) {
+                    errors = true;
+                }
+
+                if (parseFloat(maxTemp.value) <= parseFloat(minTemp.value)) {
+                    errorMaxTemp.textContent = "La temperatura máxima debe ser mayor que la mínima";
                     errors = true;
                 }
 

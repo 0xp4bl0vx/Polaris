@@ -1,19 +1,20 @@
 # TODO
 
-- [ ] Esquema
-- [ ] README.md
-- [ ] Modo configuración
+- [X] Modo configuración
 	- [X] WIFI
 	- [X] Servidor HTTP
 	- [X] Formulario
-	- [ ] Validacion datos
-	- [ ] Escritura en memoria
+	- [X] Validacion datos
+	- [X] Escritura en memoria
 - [ ] Modo medición
-	- [ ] Conexión WIFI
+	- [X] Conexión WIFI
+	- [X] Medidas
+	- [X] LCD Display INFO
 	- [ ] Envio de datos
-	- [ ] Medidas
-	- [ ] LCD Display INFO
 	- [ ] Sistema de alerta
-- [ ] Configuracion nueva del servidor
+	- [ ] Cambio de modo con botón
+- [ ] PHP API
+- [ ] MySQL DB
 - [ ] Plataforma visualizacion de datos
 - [ ] Programacion OTA
+- [ ] CSS página configuración
