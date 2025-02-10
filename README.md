@@ -13,9 +13,9 @@ El formulario de configuracion y el código actual del arduino ya estan disponib
 esta practicamente terminado a falta de probarlo en busca de bugs y añadir un par de funcionalidades más.
 La aplicacion web esta en fase de desarrollo y actualizare el repositorio con la primera versión de la API.         
 
-El programa cambiar modo sirve para poner el dispositivo en modo configuración, en un futuro esta función 
+El programa "cambiar_modo" sirve para poner el dispositivo en modo configuración, en un futuro esta función 
 estara implementada en un botón. Por otro lado, el CSS de la página de configuración no esta terminado y 
-puede no formar parte de la versión final por optimizar el uso de la memoria.
+puede no formar parte de la versión final para optimizar el uso de la memoria.
 
 Conforme el proyecto avance actualizare el esquema y este README con las nuevas características.
 
